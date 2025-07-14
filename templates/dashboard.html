@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Blood Inventory</h2>
+{% if msg %}
+<p>{{ msg }}</p>
+{% else %}
+<table class="table table-striped">
+  <thead><tr><th>Group</th><th>Packets</th></tr></thead>
+  <tbody>
+    {% for row in details %}
+      <tr><td>{{ row.B_GROUP }}</td><td>{{ row.TOTAL_PACKETS }}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}
