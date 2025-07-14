@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Add Blood{% endblock %}
+{% block content %}
+<h2>Add Blood Packets</h2>
+<form method="post">
+  <div class="row">
+    <div class="col mb-3"><label>Donor ID</label><input name="d_id" class="form-control" required/></div>
+    <div class="col mb-3"><label>Blood Group</label><input name="blood_group" class="form-control" required/></div>
+  </div>
+  <div class="mb-3"><label>Packets</label><input name="packets" type="number" class="form-control" required/></div>
+  <button class="btn btn-success">Add to Bank</button>
+</form>
+{% endblock %}

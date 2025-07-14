@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Donate Blood{% endblock %}
+{% block content %}
+<h2>Donor Registration</h2>
+<form method="post">
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input name="dname" class="form-control" maxlength="50" required/>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Sex</label>
+    <select name="sex" class="form-control" required>
+      <option disabled selected>Select sex</option>
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+  </div>
+  <div class="mb-3 row">
+    <div class="col">
+      <label class="form-label">Age</label>
+      <input name="age" type="number" min="21" max="120" class="form-control" required/>
+      <small class="form-text text-muted">Donor must be ≥ 21</small>
+    </div>
+    <div class="col">
+      <label class="form-label">Weight (kg)</label>
+      <input name="weight" type="number" min="40" max="300" class="form-control" required/>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Blood Group</label>
+    <input name="Bloodgroud" class="form-control" maxlength="4" required/>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Address</label>
+    <textarea name="address" class="form-control" maxlength="150" rows="2" required></textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Disease (if any)</label>
+    <input name="disease" class="form-control" maxlength="50"/>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input name="demail" type="email" class="form-control" maxlength="100" required/>
+  </div>
+  <button class="btn btn-success">Register Donor</button>
+</form>
+{% endblock %}

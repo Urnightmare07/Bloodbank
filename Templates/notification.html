@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Notifications{% endblock %}
+{% block content %}
+<h2>Blood Requests</h2>
+{% if msg %}
+<p>{{ msg }}</p>
+{% else %}
+<table class="table table-striped">
+  <thead><tr><th>Name</th><th>Group</th><th>Packets</th><th>Address</th><th>Actions</th></tr></thead>
+  <tbody>
+    {% for r in requests %}
+      <tr>
+        <td>{{ r.F_NAME }}</td>
+        <td>{{ r.B_GROUP }}</td>
+        <td>{{ r.C_PACKETS }}</td>
+        <td>{{ r.ADRESS }}</td>
+        <td>
+          <a href="{{ url_for('accept') }}" class="btn btn-sm btn-success">Accept</a>
+          <a href="{{ url_for('decline') }}" class="btn btn-sm btn-danger">Decline</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}
